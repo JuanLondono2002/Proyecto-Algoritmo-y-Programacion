@@ -17,9 +17,9 @@ class Museo:
 
 1- Ver departamentos de MetroArte
 
-2- Buscar obras por nacionalidad del autor
+2- Buscar obras por nacionalidad del artista
 
-3- Buscar obras por nombre del autor
+3- Buscar obras por nombre del artista
 
 4- Salir del programa
 
@@ -161,14 +161,14 @@ class Museo:
             self.empezar_programa()
 
         else:
-            print("\nOpcion Invalidad. Seleccione una opcion del menu")
+            print("\nOpcion Invalida. Seleccione una opcion del menu")
 
     def buscar_por_nombre_autor(self):
-        nombre_autor = input("\nIngrese el nombre del autor que deseas buscar (ej: Vincent van Gogh): ")
+        nombre_autor = input("\nIngrese el nombre del artista que deseas buscar (ej: Vincent van Gogh): ")
         ids_obras = API.buscar_obras_por_autor(nombre_autor)
 
         if len(ids_obras) == 0:
-            print("\nNo se encontraron obras para este autor.")
+            print("\nNo se encontraron obras para este artista.")
             return
 
         print(f"\nBuscando obras de: {nombre_autor}")
@@ -201,7 +201,7 @@ class Museo:
             self.empezar_programa()
 
         else:
-            print("\nOpcion Invalidad. Seleccione una opcion del menu")
+            print("\nOpcion Invalida. Seleccione una opcion del menu")
 
     def ver_detalles_obra(self, id_obra):
         datos_obra_dict = API.obtener_detalles_obra(id_obra)
