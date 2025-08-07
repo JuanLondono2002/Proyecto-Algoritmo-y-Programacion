@@ -83,7 +83,7 @@ class Museo:
                 print("Opción no válida. Intente nuevamente.")
 
     def obras_por_nacionalidad(self, nacionalidad):
-        print(f"Buscando obras de la nacionalidad: {nacionalidad}")
+        print(f"\nBuscando obras de la nacionalidad: {nacionalidad}")
         ids_obras = API.buscar_obras_por_nacionalidad(nacionalidad)
 
         print(f"\nObras encontradas:")
@@ -115,7 +115,7 @@ class Museo:
             self.empezar_programa()
 
         else:
-            print("\nOpcion Invalidad. Seleccione una opcion del menu")
+            print("\nOpcion Invalida. Seleccione una opcion del menu")
 
     def ver_departamentos(self):
         departamentos_dic = API.obtener_departamentos()
