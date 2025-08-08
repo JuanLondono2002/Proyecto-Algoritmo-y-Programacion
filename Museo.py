@@ -13,7 +13,7 @@ class Museo:
 
     def empezar_programa(self):
         while True:
-            opcion = input("""\nBienvenido a MetroArt: Seleccione una opción del menú:
+            opcion = input("""\nBienvenido a MetroArt: Seleccione una opción del menu:
 
 1- Ver departamentos de MetroArte
 
@@ -35,7 +35,7 @@ class Museo:
                 print("Gracias por visitar MetroArt")
                 break
             else:
-                print("Opción no válida. Por favor, intenta de nuevo.")
+                print("Opcion no valida. Por favor, intenta de nuevo.")
 
     def buscar_nacionalidades(self):
         pagina = 0
@@ -47,20 +47,20 @@ class Museo:
             fin = inicio + elementos_por_pagina
             nacionalidades_pagina = self.nacionalidades[inicio:fin]
 
-            print("\n--- Nacionalidades Disponibles ---")
+            print("\nNacionalidades Disponibles:")
             for i, nacionalidad in enumerate(nacionalidades_pagina,start=1):
                 print(f"{i} - {nacionalidad}")
 
             print("\nSeleccione una opcion del menu:")
             print(f"1- Seleccionar una nacionalidad de la lista (1-{len(nacionalidades_pagina)})")
             if pagina < total_paginas - 1:
-                print("2- Ver más nacionalidades")
-            print("3- Volver al menú principal")
+                print("2- Ver mas nacionalidades")
+            print("3- Volver al menu principal")
 
             opcion = input("--> ")
 
             if opcion == '1':
-                selec_nacionalidad = input(f"\nIngrese el número de nacionalidad de la lista (1-{len(nacionalidades_pagina)}): ")
+                selec_nacionalidad = input(f"\nIngrese el numero de nacionalidad de la lista (1-{len(nacionalidades_pagina)}): ")
                 if selec_nacionalidad.isdigit():
                     selec_nacionalidad = int(selec_nacionalidad)
                     if 1 <= selec_nacionalidad <= len(nacionalidades_pagina):
@@ -68,19 +68,19 @@ class Museo:
                         self.obras_por_nacionalidad(nacionalidad_seleccionada)
                         break
                     else:
-                        print("\nNúmero fuera de rango. Intente nuevamente.")
+                        print("\nNumero fuera de rango. Intente nuevamente.")
                 else:
                     print("\nOpcion invalida. Debe ingresar un número.")
 
             elif opcion == '2' and pagina < total_paginas - 1:
                 pagina += 1
-                print(f"Mostrando página {pagina + 1} de {total_paginas}")
+                print(f"Mostrando pagina {pagina + 1} de {total_paginas}")
 
             elif opcion == '3':
                 break
 
             else:
-                print("Opción no válida. Intente nuevamente.")
+                print("Opción no valida. Intente nuevamente.")
 
     def obras_por_nacionalidad(self, nacionalidad):
         print(f"\nBuscando obras de la nacionalidad: {nacionalidad}")
@@ -123,7 +123,7 @@ class Museo:
         for departamento in departamentos_dic:
             departamentos_obj.append(Departamento(departamento["departmentId"],departamento["displayName"]))
 
-        print("\nDepartamentos de MetroArt")
+        print("\nDepartamentos de MetroArt:")
         for departamento in departamentos_obj:
             departamento.show()
 
